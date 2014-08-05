@@ -1,1 +1,18 @@
 A simple evaluation of iterators in Go.
+
+Some results:
+
+BenchmarkIntsSimpleRange                5000    498279 ns/op
+BenchmarkDataSimpleRange                2000   1142725 ns/op
+BenchmarkIntsCallbackIterator           1000   2340354 ns/op
+BenchmarkDataCallbackIterator           1000   2512231 ns/op
+BenchmarkIntsChannelIterator              20 127451936 ns/op
+BenchmarkDataChannelIterator              10 131795174 ns/op
+BenchmarkIntsBufferedChannelIterator      20  61786874 ns/op
+BenchmarkDataBufferedChannelIterator      20  78844726 ns/op
+BenchmarkIntsClosureIterator             500   3524537 ns/op
+BenchmarkDataClosureIterator             500   3633401 ns/op
+BenchmarkIntStatefulIterator            1000   1760488 ns/op
+BenchmarkDataStatefulIterator           1000   2503738 ns/op
+BenchmarkIntStatefulIteratorInterface    500   4717806 ns/op
+BenchmarkDataStatefulIteratorInterface   500   5147608 ns/op
