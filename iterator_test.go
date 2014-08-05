@@ -2,6 +2,28 @@ package main
 
 import "testing"
 
+func BenchmarkIntsSimpleRange(b *testing.B) {
+	InitInts()
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		var sum int = 0
+		for _, val := range int_data {
+			sum += val
+		}
+	}
+}
+
+func BenchmarkDataSimpleRange(b *testing.B) {
+	InitData()
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		var sum int = 0
+		for _, val := range struct_data {
+			sum += val.foo
+		}
+	}
+}
+
 func BenchmarkIntsCallbackIterator(b *testing.B) {
 	InitInts()
 	b.ResetTimer()
